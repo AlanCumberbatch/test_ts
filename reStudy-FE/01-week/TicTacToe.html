@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: inline-block;
+            border: 1px solid #fff;
+            vertical-align: middle;
+            /* display: inline-block;  默认是baseline 对齐，可通过设置当前属性来改变 */
+
+            line-height: 100px;
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="board"></div>
+    <!-- 棋盘表示 -->
+    <script>
+        let pattern = [
+            2, 0, 0,
+            0, 1, 0,
+            0, 0, 0
+        ];
+        let color = 1;
+        function check() {//在落完子之后触发，此时的color的状态不会改变
+            // 当前的子落下后，当前color 的连成三个，横着或者竖着，或者斜着
+            // 横 --- 任何一横行满足都OK
+            for (let i = 0; i < 3; i++) {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[i][i*3+j] !== color) {
+                        win = false;
+                    }
+                }
+                if (win) {
+                    return true;
+                }
+            }
+            // 竖
+            for (let i = 0; i < 3; i++) {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[j][i] !== color) {
+                        win = false;
+                    }
+                }
+                if (win) {
+                    return true;
+                }
+            }
+            // 斜
+            {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[j][j] !== color) {
+                        win = false;
+                    }
+                }
+                if (win) {
+                    return true;
+                }
+            }
+            {
+                let win = true;
+                for (let j = 0; j < 3; j++) {
+                    if (pattern[j][2 - j] !== color) {
+                        win = false;
+                    }
+                }
+                if (win) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        function move(x, y) {
+            pattern[y][x] = color;
+            show();
+            if (check()) {
+                alert(color == 2 ? "❌ is winner" : "⭕️ is winner");
+            }
+            color = 3 - color;
+        }
+
+        function show() {
+            let board = document.querySelector('#board');
+            board.innerHTML = "";
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    let cell = document.createElement("div");
+                    cell.classList.add('cell');
+                    cell.innerHTML =
+                        pattern[j][i] == 2 ? '❌' :
+                            pattern[j][i] == 1 ? '⭕️' : "";
+
+                    cell.addEventListener('click', () => move(i, j));
+                    board.appendChild(cell);
+                }
+                board.appendChild(document.createElement("br"));
+            }
+        }
+        show(pattern);
+    </script>
+</body>
+
+</html>

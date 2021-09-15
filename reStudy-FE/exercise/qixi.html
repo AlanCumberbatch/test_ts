@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <title>七夕</title>
+  <style>
+    /*---样式清除开始----*/
+      html, body, div, span, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+      small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section, summary,
+      time, mark, audio, video {
+          margin: 0;
+          padding: 0;
+          font-size: 100%;
+          font-weight: inherit;
+          font-style: normal;
+          vertical-align: baseline;
+          background: transparent;
+          border: 0;
+          outline: 0;
+      }
+
+      /* HTML5 RESETS FOR OLDER BROWSERS */
+      article, aside, figure, figure img, hgroup, footer, header, nav, section {
+          display: block;
+      }
+
+      ol, ul {
+          list-style: none;
+      }
+
+      a {
+          text-decoration: none;
+      }
+    /*---样式清除结束------*/
+  </style>
+  <style>
+    body{
+      background-color: skyblue;
+    }
+    .words{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+    .leftBox{
+      width: 25vw;
+      height: 100vh;
+      /* background-color: green; */
+    }
+    .rightBox{
+      flex:1;
+      height: 100vh;
+      line-height: 100vh;
+      /* background-color: red; */
+      font-size: 5vw;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 先确定文字 -->
+  <div class="words">
+    <div class="leftBox"></div>
+    <div class="rightBox">
+      <!-- <span class="remember">我记得</span><span class="u_I">你</span><span class="said">说过</span><span class="sth">食堂看我</span> -->
+
+    </div>
+  </div>
+
+  <!--
+    我记得你在食堂看我，
+    我记得你说过你想我找你聊天
+    我记得你说过不讨厌粘人的我，讨不讨厌的都不重要。
+    我记得你说过我“犹豫不决，别犹豫”。
+
+    我记得我和你说过我需要你
+    我记得我和你说过无数次我喜欢你
+    我记得我和你说过我想珍惜你。
+    我记得我和你说我想和你结婚，然后当天下班你像个傻子一样跑远了，跑远了还不忘了回头看我一眼，满脸写着开心。
+
+    你可以撒娇，可以耍宝，可以口是心非
+    我会尝试着去理解你，会慢慢地去尝试。
+    我第一次决定爱一个人，多少会有些笨拙，一定要给予我宽容和沟通，不然我就真的不会了，傻傻的不知道怎么办好了。
+    就比如一件非常重要的事情：
+    其实，答案你早就告诉我了，只是我自己太傻，没发现而已。
+
+    但是如果可以，我还是希望你可和我很坦率真诚的聊天。我知道这需要一个过程，慢慢就会了，让你安心了就好了。
+  -->
+
+  <script>
+    $(function() {
+        var $this = $(".scroll");
+        var scrollTimer;
+        $this.hover(function() {
+            clearInterval(scrollTimer);
+        }, function() {
+            scrollTimer = setInterval(function() {
+                scrollContent($this);
+            }, 2000);
+        }).trigger("mouseout");
+    });
+
+    function scrollContent(obj) {
+        var $self = obj.find("ul:first");
+        var lineHeight = $self.find("li:first").height(); //获取行高
+        $self.animate({
+            "margin-top": -lineHeight + "px"
+        }, 1000, function() {
+            $self.css({
+                "margin-top": "0px"
+            }).find("li:first").appendTo($self); //appendTo能直接移动元素而不是复制，被appendto的元素位置发生变化
+        })
+    }
+   </script>
+
+
+
+  <!-- <script>
+    //  我想要的效果是： 文字滚动切换
+    /*
+      如何切换？ 有几种情况：
+        我记得 + 你/我和你 + (说过) + 内容
+      那：
+        在 内容是 ‘我需要你’ 的时候 切换  你/我和你
+        在 内容是 '你想我找你聊天' 的时候 切换  (说过)，只有  '在食堂看我' 这个 内容才不显示 说过 字段
+
+      然后要循环播放动画
+    */
+
+    // 关于“说过”这俩字儿的处理就是是否显示对应的dom，当对应的字符串 为 ‘在食堂看我’ 时不显示
+    let said = document.querySelector('.said');//’在食堂看我‘【0】： 有 说过，其他时候没有
+    let u_I = document.querySelector('.u_I');  //’在食堂看我‘【0】： 我和你 ---》 你   ‘我需要你’【4】: 你——》 我和你；
+
+    let sth = document.querySelector('.sth');
+    let sth_words_to_change = [
+      '在食堂看我',
+      '你想我找你聊天',
+      '不讨厌粘人的我，讨不讨厌的都不重要',
+      '我“犹豫不决，别犹豫”.',
+      '我需要你',
+      '无数次我喜欢你',
+      '我想珍惜你',
+      '我想和你结婚，然后当天下班你像个傻子一样跑远了，跑远了还不忘了回头看我一眼，满脸写着开心.'
+    ];
+    let sth_words_len = sth_words_to_change.length;
+    console.log('sth_words_len',sth_words_len);
+
+    // 每 2 秒重复一次
+    let timerId = setInterval(() => {
+      console.log("1111");
+      for(let i = 0; i < sth_words_len; i++){
+        // sth.innerHTML = sth_words_to_change[i];
+        console.log('sth_words_to_change[i]',sth_words_to_change[i]);
+      }
+    },2000);
+    // let timerId = setInterval(() => alert('tick'), 2000);
+
+    // 5 秒之后停止
+    setTimeout(() => { clearInterval(timerId); console.log("222"); }, 50000);
+  </script> -->
+</body>
+</html>

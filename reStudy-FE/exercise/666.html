@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"><link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssaa065134ffe70fdb725338fbb1c919e31b49e307c9a057d53ee85805e1455.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-css611df1a2904a6193e69751fa9331470e808503ed12bc416f5625e0453eb85.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssb13bb31f5681ffc0a5adf1dfcfafec779738e8b8f180aa595852f0791d939.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssccd1d5d32ed6b710d6cd2c50b48768caa6225c3b43bfdb8d02b70231ec79d.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssf72ef03ec026ea0740d24f4b30b36bb1852cd598c9745d1041c473b297448.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-css504734d3ccc564421d23afc1bcb975e04cdc2ec9edcfb423ea0736db19e02.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssce56ec635cdcbff84af00292d44291c646cddb5c094a291b5ba96777be80d.css" as="style" media="all" />
+<link rel="preload" href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-css12da9c4bac46f562c1fcabdb814b9d4ed26938c9e89b3dd10fe2c3b88b9e2.css" as="style" media="all" />
+<script data-cfasync="false">function fvmuag(){var e=navigator.userAgent;if(e.match(/x11.*ox\/54|id\s4.*us.*ome\/62|oobo|ight|tmet|eadl|ngdo|PTST/i))return!1;if(e.match(/x11.*me\/86\.0/i)){var r=screen.width;if("number"==typeof r&&1367==r)return!1}return!0}</script><title>纯JS无间隙文字向上滚动代码 - 体验盒子 - 不再关注网络安全</title><meta name="description" content="收藏备用吧，小效果还会经常用到的							&lt;!DOCTYPE html PUBLIC "-><meta name="keywords" content="Javascript,前端学习,向上滚动代码,滚动代码"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="renderer" content="webkit|ie-comp|ie-stand"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name='robots' content='max-image-preview:large' /><link rel="canonical" href="https://www.uedbox.com/post/29/" />
+
+<link rel="Shortcut Icon" href="" type="image/x-icon"/>
+<script type="text/javascript">var um ={"wp_url":"https:\/\/www.uedbox.com","endpoint_value":false,"endpoint":false,"ajax_url":"https:\/\/www.uedbox.com\/wp-admin\/admin-ajax.php","loadingmessage":"\u4e0b\u8f7d\u5730\u5740\u9519\u8bef\uff0c\u5237\u65b0\u9875\u9762\u91cd\u8bd5\uff01","pid":29,"sina_name":"@\u4f53\u9a8c\u76d2\u5b50","sina_key":"","twitter_login":""} </script>
+
+<link rel='stylesheet' id='crayon-theme-github-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssaa065134ffe70fdb725338fbb1c919e31b49e307c9a057d53ee85805e1455.css' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-css611df1a2904a6193e69751fa9331470e808503ed12bc416f5625e0453eb85.css' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssb13bb31f5681ffc0a5adf1dfcfafec779738e8b8f180aa595852f0791d939.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssccd1d5d32ed6b710d6cd2c50b48768caa6225c3b43bfdb8d02b70231ec79d.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap.min-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssf72ef03ec026ea0740d24f4b30b36bb1852cd598c9745d1041c473b297448.css' type='text/css' media='all' />
+<link rel='stylesheet' id='froala_blocks.min-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-css504734d3ccc564421d23afc1bcb975e04cdc2ec9edcfb423ea0736db19e02.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-cssce56ec635cdcbff84af00292d44291c646cddb5c094a291b5ba96777be80d.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.uedbox.com/wp-content/themes/UB2019/dist/js/jquery.min.js?ver=3.4.1' id='jquery-js'></script>
+<script type='text/javascript' id='crayon_js-js-extra'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/www.uedbox.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.uedbox.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta' id='crayon_js-js'></script>
+<script type='text/javascript' src='https://www.uedbox.com/wp-content/themes/UB2019/dist/js/bootstrap.min.js?ver=9.0.0' id='bootstrap.min-js'></script>
+<script type='text/javascript' src='https://www.uedbox.com/wp-content/themes/UB2019/dist/js/popper.min.js?ver=9.0.0' id='popper.min-js'></script>
+<script type='text/javascript' src='https://www.uedbox.com/wp-content/themes/UB2019/dist/js/base.js' id='UB2019-js'></script>
+<script type='text/javascript' id='wp-zan-0.0.10-js-extra'>
+/* <![CDATA[ */
+var wpzan_ajax_url = "https:\/\/www.uedbox.com\/wp-admin\/admin-ajax.php";
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.uedbox.com/wp-content/plugins/wp-zan/static/js/wp-zan-0.0.10.js?ver=0.0.10' id='wp-zan-0.0.10-js'></script>
+
+
+
+
+	    <link href="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/favicon.ico" rel="shortcut icon">
+
+    <link href="https://www.uedbox.com/wp-content/cache/fvm/min/1624492260-css12da9c4bac46f562c1fcabdb814b9d4ed26938c9e89b3dd10fe2c3b88b9e2.css" rel="stylesheet" media="all">
+</head>
+
+<body class="post-template-default single single-post postid-29 single-format-standard default">
+    <header class="p-2" style="box-shadow: 0 0 18px rgba(0,0,0,.06);" id="navigator">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="https://www.uedbox.com">
+                    <img src="https://www.uedbox.com/wp-content/themes/UB2019/imgs/logo.png" height="30" alt="体验盒子">
+                </a>
+
+                <div class="d-flex ml-auto">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav1">
+
+                    <form method="get" class="form-navbar my-2 my-lg-0 order-2" role="search" action="https://www.uedbox.com/">
+                        <input type="text" name="s" class="form-control border-0 shadow-none" placeholder="搜索" />
+                    </form>
+
+                    <ul id="menu-header-menu" class="navbar-nav mr-auto"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-66862" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-66862 nav-item"><a title="博文" href="https://www.uedbox.com/blog/" class="nav-link">博文</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-66865" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-66865 nav-item"><a title="设计开发" href="https://www.uedbox.com/design/" class="nav-link">设计开发</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-66864" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66864 nav-item"><a title="观点" href="https://www.uedbox.com/entertainment/" class="nav-link">观点</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-55375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-55375 nav-item"><a title="…" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-55375">…</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-55375" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-55377" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55377 nav-item"><a title="关于" href="https://www.uedbox.com/about/" class="dropdown-item">关于</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-55376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55376 nav-item"><a title="分享" href="https://www.uedbox.com/share/" class="dropdown-item">分享</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-55404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55404 nav-item"><a title="服务" href="https://www.uedbox.com/service/" class="dropdown-item">服务</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-55379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55379 nav-item"><a title="老电影" href="https://www.uedbox.com/movie/" class="dropdown-item">老电影</a></li>
+</ul>
+</li>
+</ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <style media="all">#KyASwNURdaus{display:none;padding:20px 10px;background:#D30000;text-align:center;font-weight:700;color:#fff}</style>
+    <script src="https://www.uedbox.com/wp-content/themes/UB2019/dist/js/ads.js" type="text/javascript"></script>
+    <div id="KyASwNURdaus"></div>
+
+    <section class="fdb-block border-0 pb-5">
+        <div class="container">
+            <div class="row post">
+                <div class="col-12">
+                    <h1 class="text-break">纯JS无间隙文字向上滚动代码</h1>
+                    <ul class="list-inline text-secondary">
+                        <li class="list-inline-item">发表于
+                            <time class="published">2010年06月18日</time>
+                        </li>
+                        <li class="list-inline-item"><a href="https://www.uedbox.com/design/htmlcss/" rel="category tag">前端</a></li>
+						                        <li class="list-inline-item"><time class='updated text-success'>更新于 2012年06月22日 10:22:44 上午</time>                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <div class="mt-5 mb-5 text-break">
+                        <div class="mb-5">
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4938152797860737"
+     data-ad-slot="9308838299"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+     <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>                        </div>
+                        <div class="posts">
+							<p>收藏备用吧，小效果还会经常用到的</p>
+<p><span id="more-29"></span></p>
+<p></p>
+
+		<div id="crayon-610e08338bc98379323623" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover wrap" style=" font-size: 14px !important; line-height: 20px !important;">
+
+			<div class="crayon-plain-wrap"><textarea  class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 14px !important; line-height: 20px !important;">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;title&gt;体验盒子 － UEDBOX.COM&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div style="height:80px; position:relative; overflow:hidden;"&gt;
+&lt;div id="rollText" style="font-size:12px;line-height:20px;"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;◇ 无间隙文字向上滚动&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+var textDiv = document.getElementById("rollText");
+var textList = textDiv.getElementsByTagName("a");
+if(textList.length &gt; 2){
+var textDat = textDiv.innerHTML;
+var br = textDat.toLowerCase().indexOf("&lt;li",textDat.toLowerCase().indexOf("&lt;li")+3);
+textDiv.innerHTML = textDat+textDat+textDat.substr(0,br);
+textDiv.style.cssText = "position:absolute; top:0";
+var textDatH = textDiv.offsetHeight;MaxRoll();
+}
+var minTime,maxTime,divTop,newTop=0;
+function MinRoll(){
+newTop++;
+if(newTop&lt;=divTop+80){
+textDiv.style.top = "-" + newTop + "px";
+}else{
+clearInterval(minTime);
+maxTime = setTimeout(MaxRoll,100);
+}
+}
+function MaxRoll(){
+divTop = Math.abs(parseInt(textDiv.style.top));
+if(divTop&gt;=0 &amp;&amp; divTop&lt;textDatH-80){
+minTime = setInterval(MinRoll,80);
+}else{
+textDiv.style.top = 0;divTop = 0;newTop=0;MaxRoll();
+}
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums" data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-610e08338bc98379323623-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-2">2</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-4">4</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-6">6</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-8">8</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-10">10</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-12">12</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-14">14</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-16">16</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-18">18</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-20">20</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-22">22</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-24">24</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-26">26</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-28">28</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-30">30</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-32">32</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-34">34</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-36">36</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-38">38</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-40">40</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-42">42</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-44">44</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-46">46</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-47">47</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-48">48</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-49">49</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-50">50</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-51">51</div><div class="crayon-num crayon-striped-num" data-line="crayon-610e08338bc98379323623-52">52</div><div class="crayon-num" data-line="crayon-610e08338bc98379323623-53">53</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-610e08338bc98379323623-1"><span class="crayon-o">&lt;</span><span class="crayon-o">!</span><span class="crayon-e">DOCTYPE </span><span class="crayon-e">html </span><span class="crayon-m">PUBLIC</span><span class="crayon-h"> </span><span class="crayon-s">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span><span class="crayon-h"> </span><span class="crayon-s">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-2"><span class="crayon-o">&lt;</span><span class="crayon-e">html </span><span class="crayon-v">xmlns</span><span class="crayon-o">=</span><span class="crayon-s">"http://www.w3.org/1999/xhtml"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-3"><span class="crayon-o">&lt;</span><span class="crayon-v">head</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-4"><span class="crayon-o">&lt;</span><span class="crayon-e">meta </span><span class="crayon-v">http</span><span class="crayon-o">-</span><span class="crayon-v">equiv</span><span class="crayon-o">=</span><span class="crayon-s">"Content-Type"</span><span class="crayon-h"> </span><span class="crayon-v">content</span><span class="crayon-o">=</span><span class="crayon-s">"text/html; charset=utf-8"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-5"><span class="crayon-o">&lt;</span><span class="crayon-v">title</span><span class="crayon-o">&gt;</span>体验盒子<span class="crayon-h"> </span>－<span class="crayon-h"> </span><span class="crayon-v">UEDBOX</span><span class="crayon-sy">.</span><span class="crayon-v">COM</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">title</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-6"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">head</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-8"><span class="crayon-o">&lt;</span><span class="crayon-v">body</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-9"><span class="crayon-o">&lt;</span><span class="crayon-e">div </span><span class="crayon-v">style</span><span class="crayon-o">=</span><span class="crayon-s">"height:80px; position:relative; overflow:hidden;"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-10"><span class="crayon-o">&lt;</span><span class="crayon-e">div </span><span class="crayon-v">id</span><span class="crayon-o">=</span><span class="crayon-s">"rollText"</span><span class="crayon-h"> </span><span class="crayon-v">style</span><span class="crayon-o">=</span><span class="crayon-s">"font-size:12px;line-height:20px;"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-11"><span class="crayon-o">&lt;</span><span class="crayon-v">ul</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-12"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-13"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-14"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-15"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-16"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-17"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-18"><span class="crayon-o">&lt;</span><span class="crayon-v">li</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-o">&gt;</span>◇<span class="crayon-h"> </span>无间隙文字向上滚动<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">a</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">li</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-19"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">ul</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-20"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">div</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-21"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">div</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-22"><span class="crayon-ta">&lt;script </span><span class="crayon-e">type</span><span class="crayon-o">=</span><span class="crayon-s">"text/javascript"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-23"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">textDiv</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">document</span><span class="crayon-sy">.</span><span class="crayon-e">getElementById</span><span class="crayon-sy">(</span><span class="crayon-s">"rollText"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-24"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">textList</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-e">getElementsByTagName</span><span class="crayon-sy">(</span><span class="crayon-s">"a"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-25"><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">textList</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-26"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">textDat</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">innerHTML</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-27"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">br</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">textDat</span><span class="crayon-sy">.</span><span class="crayon-e">toLowerCase</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">indexOf</span><span class="crayon-sy">(</span><span class="crayon-s">"&lt;li"</span><span class="crayon-sy">,</span><span class="crayon-v">textDat</span><span class="crayon-sy">.</span><span class="crayon-e">toLowerCase</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">indexOf</span><span class="crayon-sy">(</span><span class="crayon-s">"&lt;li"</span><span class="crayon-sy">)</span><span class="crayon-o">+</span><span class="crayon-cn">3</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-28"><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">innerHTML</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">textDat</span><span class="crayon-o">+</span><span class="crayon-v">textDat</span><span class="crayon-o">+</span><span class="crayon-v">textDat</span><span class="crayon-sy">.</span><span class="crayon-e">substr</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-v">br</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-29"><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">style</span><span class="crayon-sy">.</span><span class="crayon-e">cssText</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"position:absolute; top:0"</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-30"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">textDatH</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">offsetHeight</span><span class="crayon-sy">;</span><span class="crayon-e">MaxRoll</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-31"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-32"><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-v">minTime</span><span class="crayon-sy">,</span><span class="crayon-v">maxTime</span><span class="crayon-sy">,</span><span class="crayon-v">divTop</span><span class="crayon-sy">,</span><span class="crayon-v">newTop</span><span class="crayon-o">=</span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-33"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">MinRoll</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-34"><span class="crayon-v">newTop</span><span class="crayon-o">++</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-35"><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">newTop</span><span class="crayon-o">&lt;=</span><span class="crayon-v">divTop</span><span class="crayon-o">+</span><span class="crayon-cn">80</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-36"><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">style</span><span class="crayon-sy">.</span><span class="crayon-e">top</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"-"</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">newTop</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">"px"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-37"><span class="crayon-sy">}</span><span class="crayon-st">else</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-38"><span class="crayon-r">clearInterval</span><span class="crayon-sy">(</span><span class="crayon-v">minTime</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-39"><span class="crayon-v">maxTime</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">setTimeout</span><span class="crayon-sy">(</span><span class="crayon-v">MaxRoll</span><span class="crayon-sy">,</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-40"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-41"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-42"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">MaxRoll</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-43"><span class="crayon-v">divTop</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">abs</span><span class="crayon-sy">(</span><span class="crayon-r">parseInt</span><span class="crayon-sy">(</span><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">style</span><span class="crayon-sy">.</span><span class="crayon-v">top</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-44"><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">divTop</span><span class="crayon-o">&gt;=</span><span class="crayon-cn">0</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">divTop</span><span class="crayon-o">&lt;</span><span class="crayon-v">textDatH</span><span class="crayon-o">-</span><span class="crayon-cn">80</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-45"><span class="crayon-v">minTime</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">setInterval</span><span class="crayon-sy">(</span><span class="crayon-v">MinRoll</span><span class="crayon-sy">,</span><span class="crayon-cn">80</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-46"><span class="crayon-sy">}</span><span class="crayon-st">else</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-47"><span class="crayon-v">textDiv</span><span class="crayon-sy">.</span><span class="crayon-v">style</span><span class="crayon-sy">.</span><span class="crayon-v">top</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span><span class="crayon-v">divTop</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span><span class="crayon-v">newTop</span><span class="crayon-o">=</span><span class="crayon-cn">0</span><span class="crayon-sy">;</span><span class="crayon-e">MaxRoll</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-48"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-49"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-50"><span class="crayon-ta">&lt;/script&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-51"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">body</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-610e08338bc98379323623-52"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">html</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-610e08338bc98379323623-53"></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+<p></p>
+                        </div>
+                    </div>
+					<div class="row align-items-center">
+    <div class="col">
+		<a id="wp-zan-29" class="wp-zan btn btn-light w-100 mb-3" onclick="wpzan(29, 0)" href="javascript:;"><i class="far fa-grin-stars"></i> 点赞(<span>0</span>)</a>    </div>
+    <div class="col">
+        <button type="button" class="btn btn-primary w-100 mb-3" data-toggle="modal" data-target=".bs-example-modal-sm2"><i class="fas fa-dollar-sign"></i> 打赏</button>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-light w-100 mb-3" data-toggle="modal" data-target=".bs-example-modal-sm1"><i class="fa fa-share" aria-hidden="true"></i> 分享</button>
+    </div>
+</div>                    <div class="alert alert-warning" role="alert">
+                            <span class="d-block">
+                                原文连接：<strong><a href="https://www.uedbox.com/post/29/">纯JS无间隙文字向上滚动代码</a></strong>
+                            </span>
+                        <span>所有媒体，可在保留署名、<code>原文连接</code>的情况下转载，若非则不得使用我方内容。</span>
+                    </div>
+                    <div class="mt-2">标签: <a href="https://www.uedbox.com/post/tag/javascript/" rel="tag">Javascript</a> , <a href="https://www.uedbox.com/post/tag/htmlcss/" rel="tag">前端学习</a> , <a href="https://www.uedbox.com/post/tag/%e5%90%91%e4%b8%8a%e6%bb%9a%e5%8a%a8%e4%bb%a3%e7%a0%81/" rel="tag">向上滚动代码</a> , <a href="https://www.uedbox.com/post/tag/%e6%bb%9a%e5%8a%a8%e4%bb%a3%e7%a0%81/" rel="tag">滚动代码</a></div>
+                    <div class="row mt-5">
+
+                    </div>
+                </div>
+            </div>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4938152797860737"
+     data-ad-slot="2795400839"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+     <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>        </div>
+    </section>
+
+    <section class="fdb-block p-0">
+        <div class="container">
+            <ul class="nav nav-tabs mb-3 nav-justified" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-xg" role="tab" aria-controls="pills-xg" aria-selected="true">相关推荐</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-last" role="tab" aria-controls="pills-last" aria-selected="false">最新文章</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-30" role="tab" aria-controls="pills-30" aria-selected="false">30天最热</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false">历史最热</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content bg-light text-center" id="pills-tabContent">
+            <div class="tab-pane fade show active container" id="pills-xg" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="row m-0">
+					                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/56483/" title="JStillery：一个高级JS反混淆解密项目" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2019/06/35220393-836aafd0-ff76-11e7-8ba9-86369e23573a.png&h=144&w=208&zc=1" alt="JStillery：一个高级JS反混淆解密项目">
+                                    <div class="mt-2 text-break">JStillery：一个高级JS反混淆解密项目</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/5248/" title="JS错误缺少对象(Line 53)解决" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/themes/UB2019/dist/images/placeholder.png&h=144&w=208&zc=1" alt="JS错误缺少对象(Line 53)解决">
+                                    <div class="mt-2 text-break">JS错误缺少对象(Line 53)解决</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/4550/" title="219字节的javascript游戏" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/themes/UB2019/dist/images/placeholder.png&h=144&w=208&zc=1" alt="219字节的javascript游戏">
+                                    <div class="mt-2 text-break">219字节的javascript游戏</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/4339/" title="瀑布流布局" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2012/04/1.png&h=144&w=208&zc=1" alt="瀑布流布局">
+                                    <div class="mt-2 text-break">瀑布流布局</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/3653/" title="新闻滚动效果代码" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/themes/UB2019/dist/images/placeholder.png&h=144&w=208&zc=1" alt="新闻滚动效果代码">
+                                    <div class="mt-2 text-break">新闻滚动效果代码</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/3193/" title="树形菜单组件(dtree)" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2011/07/dtree.png&h=144&w=208&zc=1" alt="树形菜单组件(dtree)">
+                                    <div class="mt-2 text-break">树形菜单组件(dtree)</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/2744/" title="倒计时 带微秒" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2011/04/octim.png&h=144&w=208&zc=1" alt="倒计时 带微秒">
+                                    <div class="mt-2 text-break">倒计时 带微秒</div>
+                                </a>
+                            </div>
+							                            <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                                <a href="https://www.uedbox.com/post/2672/" title="JS缓冲效果+伸缩隐藏层" target="_blank">
+                                    <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/themes/UB2019/dist/images/placeholder.png&h=144&w=208&zc=1" alt="JS缓冲效果+伸缩隐藏层">
+                                    <div class="mt-2 text-break">JS缓冲效果+伸缩隐藏层</div>
+                                </a>
+                            </div>
+							                </div>
+            </div>
+            <div class="tab-pane fade container" id="pills-last" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row m-0">
+					                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66888/" title="RHEL/CentOS/Fedora Linux命令下安装Google Chrome">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2021/07/yum-google-chrome-command.jpg&h=182&w=350&zc=1" alt="RHEL/CentOS/Fedora Linux命令下安装Google Chrome">
+                                <div class="mt-2 text-break">RHEL/CentOS/Fedora Linux命令下安装Google Chrome</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66885/" title="MacBook 大写键盘灯不亮的问题的解决方案">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2021/07/2018051418462765.png&h=182&w=350&zc=1" alt="MacBook 大写键盘灯不亮的问题的解决方案">
+                                <div class="mt-2 text-break">MacBook 大写键盘灯不亮的问题的解决方案</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66881/" title="Can't build Flutter application: Unable to locate DeviceSupport directory解决">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2021/07/iPhoneOSDeviceSupport.png&h=182&w=350&zc=1" alt="Can't build Flutter application: Unable to locate DeviceSupport directory解决">
+                                <div class="mt-2 text-break">Can't build Flutter application: Unable to locate DeviceSupport directory解决</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66879/" title="Error launching app. Try launching from within Xcode via解决">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2021/07/6f9dbb1b9dfc8c1f9bdc900df60.png&h=182&w=350&zc=1" alt="Error launching app. Try launching from within Xcode via解决">
+                                <div class="mt-2 text-break">Error launching app. Try launching from within Xcode via解决</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66877/" title="Error running 'env GEM_HOME=/Users/解决">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2016/07/linux.jpg&h=182&w=350&zc=1" alt="Error running 'env GEM_HOME=/Users/解决">
+                                <div class="mt-2 text-break">Error running 'env GEM_HOME=/Users/解决</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66874/" title="brew update 更新错误 shallow clone">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2015/05/mac.png&h=182&w=350&zc=1" alt="brew update 更新错误 shallow clone">
+                                <div class="mt-2 text-break">brew update 更新错误 shallow clone</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66871/" title="No podspec found for `flutter_keyboard_visibility_web`解决">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2019/12/flutter.png&h=182&w=350&zc=1" alt="No podspec found for `flutter_keyboard_visibility_web`解决">
+                                <div class="mt-2 text-break">No podspec found for `flutter_keyboard_visibility_web`解决</div>
+                            </a>
+                        </div>
+						                        <div class="col col-6 col-md-3 p-3 p-md-5 bg-light border border-white shadow-sm">
+                            <a href="https://www.uedbox.com/post/66867/" title="WordPress批量处理文章SQL">
+                                <img class="img-fluid lazy" src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/loader.svg" data-src="https://www.uedbox.com/wp-content/themes/UB2019/prcute.php?src=https://www.uedbox.com/wp-content/uploads/2015/10/wp.png&h=182&w=350&zc=1" alt="WordPress批量处理文章SQL">
+                                <div class="mt-2 text-break">WordPress批量处理文章SQL</div>
+                            </a>
+                        </div>
+						                </div>
+            </div>
+            <div class="tab-pane fade container" id="pills-30" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row m-0">
+                    <div class="col-12 bg-light border border-white p-3">
+                        <ul class="list-unstyled mb-0">
+															<li><a href="https://www.uedbox.com/post/66885/" title="MacBook 大写键盘灯不亮的问题的解决方案">MacBook 大写键盘灯不亮的问题的解决方案</a></li><li><a href="https://www.uedbox.com/post/66888/" title="RHEL/CentOS/Fedora Linux命令下安装Google Chrome">RHEL/CentOS/Fedora Linux命令下安装Google Chrome</a></li><li><a href="https://www.uedbox.com/post/66881/" title="Can&#8217;t build Flutter application: Unable to locate DeviceSupport directory解决">Can&#8217;t build Flutter application: Unable to locate DeviceSupport directory解决</a></li><li><a href="https://www.uedbox.com/post/66879/" title="Error launching app. Try launching from within Xcode via解决">Error launching app. Try launching from within Xcode via解决</a></li>							                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade container" id="pills-all" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="row m-0">
+                    <div class="col-12 bg-light border border-white p-3">
+                        <ul class="list-unstyled mb-0">
+															<li><a href="https://www.uedbox.com/post/54994/" title="BT磁力搜索引擎大全">BT磁力搜索引擎大全</a></li><li><a href="https://www.uedbox.com/post/58618/" title="最新ESET NOD32 License Key/激活码/许可证密钥/用户名密码">最新ESET NOD32 License Key/激活码/许可证密钥/用户名密码</a></li><li><a href="https://www.uedbox.com/post/50992/" title="No Access-Control-Allow-Origin 跨域错误解决">No Access-Control-Allow-Origin 跨域错误解决</a></li><li><a href="https://www.uedbox.com/post/56387/" title="this channel is blocked because it was used：Telegram群组/频道屏蔽解决方法">this channel is blocked because it was used：Telegram群组/频道屏蔽解决方法</a></li><li><a href="https://www.uedbox.com/post/3902/" title="谷歌识图，以图搜图">谷歌识图，以图搜图</a></li><li><a href="https://www.uedbox.com/post/55287/" title="怎么用图片搜索番号？">怎么用图片搜索番号？</a></li><li><a href="https://www.uedbox.com/post/7182/" title="404.php webshell">404.php webshell</a></li><li><a href="https://www.uedbox.com/post/59017/" title="一个绕过Google谷歌验证码（reCAPTCHA）的方法">一个绕过Google谷歌验证码（reCAPTCHA）的方法</a></li><li><a href="https://www.uedbox.com/post/55544/" title="用uBlock Origin过滤广告，享受最好的广告拦截体验">用uBlock Origin过滤广告，享受最好的广告拦截体验</a></li><li><a href="https://www.uedbox.com/post/54446/" title="9部有史以来最好的黑客电影">9部有史以来最好的黑客电影</a></li><li><a href="https://www.uedbox.com/post/56509/" title="手机BT/种子下载，手机磁力链下载软件整理">手机BT/种子下载，手机磁力链下载软件整理</a></li><li><a href="https://www.uedbox.com/post/51126/" title="网络安全“Cyber security”和“Network security”的区别">网络安全“Cyber security”和“Network security”的区别</a></li><li><a href="https://www.uedbox.com/post/54791/" title="Searx &#8211; 尊重隐私的开源搜索引擎">Searx &#8211; 尊重隐私的开源搜索引擎</a></li><li><a href="https://www.uedbox.com/post/59475/" title="5款常用《网络抓包工具》">5款常用《网络抓包工具》</a></li><li><a href="https://www.uedbox.com/post/58938/" title="OneForAll：一款功能强大的子域名收集工具">OneForAll：一款功能强大的子域名收集工具</a></li>							                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<footer class="fdb-block footer-large-s">
+    <div class="container">
+        <div class="row align-items-top text-center">
+
+
+
+
+
+            <div class="col-12 col-md-6 col-lg-7 text-md-left">
+                <div class="d-none d-md-block">
+                    <img class="img_filter_gray" alt="体验盒子" src="https://www.uedbox.com/wp-content/themes/UB2019/imgs/logo.png" height="20">
+                    <p class="text-muted">体验盒子所发布的一切资源仅限用于学习和研究目的。不得用于非法用途，否则，一切后果用户自负。滇ICP备15006848号-1
+</p>
+                </div>
+                <ul class="list-inline d-none d-md-block">
+                    <li class="list-inline-item"><a href="https://www.uedbox.com/about">关于</a></li>
+                    <li class="list-inline-item"><a href="https://www.uedbox.com/blog">博文</a></li>
+                    <li class="list-inline-item"><a href="https://www.uedbox.com/share">分享</a></li>
+                    <li class="list-inline-item"><a href="https://www.uedbox.com/archives">存档</a></li>
+                    <li class="list-inline-item"><a href="https://www.uedbox.com/service">服务</a></li>
+                </ul>
+                <p class="text-muted"><i class="far fa-copyright"></i>2021 <a href="https://www.uedbox.com/" class="text-reset text-decoration-none">体验盒子</a></p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 ml-auto text-lg-right mt-4 mt-md-0 align-self-center">
+                <p class="h2">
+                    <a href="https://twitter.com/uedbox" class="mx-2" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+
+                    <a href="https://www.uedbox.com/sitemap.xml" class="mx-2" target="_blank"><i class="fas fa-rss-square" aria-hidden="true"></i></a>
+                    <a href="https://www.uedbox.com/feed" class="mx-2" target="_blank"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="mySmallModalLabel">扫码分享</h4>
+            </div>
+            <div class="modal-body">
+                <img src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/wx_qr.jpg" alt="网络安全" class="img-rounded img-responsive">
+
+                <div class="text-center">验证：<code>体验盒子</code></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="mySmallModalLabel">扫码分享</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body text-center">
+                <img class="img-fluid" src="https://www.uedbox.com/wp-content/themes/UB2019/functions/qr/?m=5&e=L&p=6&url=https://www.uedbox.com/post/66888/" alt="网络安全">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel2">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="mySmallModalLabel">打赏零钱</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li role="presentation" class="nav-item active">
+                        <a class="nav-link active" href="#alipay" aria-controls="alipay" role="tab" data-toggle="tab">支付宝打赏</a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="#wx_pay" aria-controls="wx_pay" role="tab" data-toggle="tab">微信打赏</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="alipay">
+                        <img src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/alipay.png" class="img-fluid mt-3">
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="wx_pay">
+                        <img src="https://www.uedbox.com/wp-content/themes/UB2019/dist/images/wx_pay.png" class="img-fluid mt-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script type='text/javascript' src='https://www.uedbox.com/wp-includes/js/wp-embed.min.js?ver=5.7.2' id='wp-embed-js'></script>
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6c83e97b3b3c196e0b1250cc1eef78a9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<script>
+    (function() {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            let script = document.createElement("script");
+            script.setAttribute("async", "");
+            script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+            document.body.appendChild(script);
+        }, 1500);
+    }
+</script>
+
+
+<script>
+    (function() {
+        var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?568e67b5e5820bf66cb8d9c8142ff382" : "https://jspassport.ssl.qhimg.com/11.0.1.js?568e67b5e5820bf66cb8d9c8142ff382";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23482352-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23482352-2');
+</script>
+
+</body>
+
+</html>
