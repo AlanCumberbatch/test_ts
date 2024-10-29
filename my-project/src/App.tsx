@@ -31,6 +31,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p>12121212</p>
       <Router>
         <nav className="p-4 bg-blue-500 text-white">
           <Link to="/" className="mr-4">Home</Link>
